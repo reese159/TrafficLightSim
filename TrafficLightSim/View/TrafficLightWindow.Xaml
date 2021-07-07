@@ -1,0 +1,14 @@
+﻿<Window x:Class="TrafficLightSim.View.TrafficLightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficLightSim.View"
+        mc:Ignorable="d"
+        Title="TrafficLightWindow" Height="450" Width="800"
+        Background="DarkGray">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="414" Fill="Gray" Stroke="Black" StrokeThickness="20" VerticalAlignment="Center" Width="348" />
+        <local:LightDisplayControl HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
+    </Grid>
+</Window>
