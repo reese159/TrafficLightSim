@@ -1,23 +1,24 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Threading;
 
 namespace TrafficLightSim.ViewModel
 {
     public class LightTimer : INotifyPropertyChanged
     {
-        private double greenOpac;
+        public double greenOpac = 1.0;
 
         public double GreenOpac
         {
-            get { return greenOpac; }
+            get => greenOpac;
             set
             {
                 greenOpac = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("greenOpac"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("greenOpac"));
             }
         }
 
-        private double yellowOpac;
+        public double yellowOpac = 0.1;
 
         public double YellowOpac
         {
@@ -29,7 +30,7 @@ namespace TrafficLightSim.ViewModel
             }
         }
 
-        private double redOpac;
+        public double redOpac = 0.1;
 
         public double RedOpac
         {
@@ -49,17 +50,10 @@ namespace TrafficLightSim.ViewModel
         /// <param name="lightColor">Color of selected light</param>
         public LightTimer()
         {
-            GreenOpac = 1.0;
-            YellowOpac = 1.0;
-            RedOpac = 1.0;
-            LightSwitch();
-        }
-
-        public void LightSwitch()
-        {
-            GreenOpac = 0.3;
-            YellowOpac = 0.3;
-            RedOpac = 0.3;
+            // DispatcherTimer dt = new DispatcherTimer();
+            //dt.Interval = TimeSpan.FromSeconds(2);
+            //dt.Tick += LightSwitch;
+            //dt.Start();
         }
     }
 }
