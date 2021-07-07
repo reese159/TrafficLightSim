@@ -24,11 +24,6 @@ namespace TrafficLightSim.View
         public LightDisplayControl()
         {
             InitializeComponent();
-            //timer = new System.Timers.Timer();
-            //timer.Elapsed += new ElapsedEventHandler(LightSwitch);
-            //timer.Interval = 2000;
-            //timer.AutoReset = true;
-            //timer.Enabled = true;
         }
 
         /// <summary>
